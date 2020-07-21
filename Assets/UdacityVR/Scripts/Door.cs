@@ -7,8 +7,8 @@ public class Door : MonoBehaviour {
 
     // TODO: Create variables to reference the game objects we need access to
     // Declare a GameObject named 'leftDoor' and assign the 'Left_Door' game object to the field in Unity
-    public GameObject leftDoor;
     // Declare a GameObject named 'rightDoor' and assign the 'Right_Door' game object to the field in Unity
+    public GameObject leftDoor;
     public GameObject rightDoor;
     // TODO: Create variables to reference the components we need access to
 
@@ -18,10 +18,11 @@ public class Door : MonoBehaviour {
     public AudioClip doorLockedClip;
     // TODO: Create variables to track the gameplay states
     // Declare a boolean named 'locked' to track if the door has been unlocked and initialize it to 'true'
-    private bool locked = true;
     // Declare a boolean named 'opening' to track if the door is opening and initialize it to 'false'
+    private bool locked = true;
     private bool opening = false;
-
+    
+    
     // TODO: Create variables to hold rotations used when animating the door opening
     // Declare a Quaternion named 'leftDoorStartRotation' to hold the start rotation of the 'Left_Door' game object
     // Declare a Quaternion named "leftDoorEndRotation" to hold the end rotation of the 'Left_Door' game object
@@ -75,7 +76,7 @@ public class Door : MonoBehaviour {
 
         // Prints to the console when the method is called
         Debug.Log("'Door.OnDoorClicked()' was called");
-
+        Debug.Log("'Door.Unlock()' was called 11...");
         // TODO: If the door is unlocked, start animating the door rotating open and play a sound to indicate the door is opening
         // Use 'locked' to check if the door is locked and ...
         // ... start the animation defined in Update() by changing the value of 'opening'
@@ -110,7 +111,6 @@ public class Door : MonoBehaviour {
 
 		// Prints to the console when the method is called
 		Debug.Log ("'Door.Unlock()' was called");
-
         // TODO: Unlock the door 
         // Unlock the door by changing the value of 'locked'
         locked = false;
