@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//using UnityEngine.UI;
 public class Door : MonoBehaviour {
+
+
+    //Mensajes de Ganar y contar monedas recogidas mediante el juego
+    
+    //public Text Text;
 
     // TODO: Create variables to reference the game objects we need access to
     // Declare a GameObject named 'leftDoor' and assign the 'Left_Door' game object to the field in Unity
@@ -39,6 +44,9 @@ public class Door : MonoBehaviour {
     private float rotationTime = 5.0f;
 
     void Start () {
+        // Para el cartel no este visible al inicio
+        //Text.enabled = false;
+
         // TODO: Get a reference to the audio source
         // Use GetComponent<>() to get a reference to the AudioSource component and assign it to the 'audioSource'
         audioSource = GetComponent<AudioSource>();
@@ -55,6 +63,8 @@ public class Door : MonoBehaviour {
 
 
 	void Update () {
+        //Text.enabled = true;
+        
         // TODO: If the door is opening, animate the 'Left_Door' and 'Right_Door' game objects rotating open
         // Use 'opening' to check if the door is opening...
         // ... use Quaternion.Slerp() to interpolate from 'leftDoorStartRotation' to 'leftDoorEndRotation' by the interpolation time 'timer / rotationTime' and assign it to the 'leftDoor' rotation
@@ -76,7 +86,7 @@ public class Door : MonoBehaviour {
 
         // Prints to the console when the method is called
         Debug.Log("'Door.OnDoorClicked()' was called");
-        Debug.Log("'Door.Unlock()' was called 11...");
+        
         // TODO: If the door is unlocked, start animating the door rotating open and play a sound to indicate the door is opening
         // Use 'locked' to check if the door is locked and ...
         // ... start the animation defined in Update() by changing the value of 'opening'
