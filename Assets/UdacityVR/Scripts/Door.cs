@@ -4,30 +4,19 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 //using UnityEngine.UI;
 public class Door : MonoBehaviour {
-
-
-    //Mensajes de Ganar y contar monedas recogidas mediante el juego
-    
-    //public Text Text;
-
-    // TODO: Create variables to reference the game objects we need access to
     // Declare a GameObject named 'leftDoor' and assign the 'Left_Door' game object to the field in Unity
     // Declare a GameObject named 'rightDoor' and assign the 'Right_Door' game object to the field in Unity
     public GameObject leftDoor;
     public GameObject rightDoor;
-    // TODO: Create variables to reference the components we need access to
-
     // Declare an AudioSource named 'audioSource' and get a reference to the audio source in Start()
     private AudioSource audioSource;
     public AudioClip doorOpeningClip;
     public AudioClip doorLockedClip;
-    // TODO: Create variables to track the gameplay states
+    
     // Declare a boolean named 'locked' to track if the door has been unlocked and initialize it to 'true'
     // Declare a boolean named 'opening' to track if the door is opening and initialize it to 'false'
     private bool locked = true;
     private bool opening = false;
-    
-    
     // TODO: Create variables to hold rotations used when animating the door opening
     // Declare a Quaternion named 'leftDoorStartRotation' to hold the start rotation of the 'Left_Door' game object
     // Declare a Quaternion named "leftDoorEndRotation" to hold the end rotation of the 'Left_Door' game object
@@ -100,10 +89,8 @@ public class Door : MonoBehaviour {
         if (!locked)
         {
             opening = true;
-
             audioSource.clip = doorOpeningClip;
             audioSource.Play();
-
             EventTrigger eventTrigger = GetComponent<EventTrigger>();
             eventTrigger.enabled = false;
         }
@@ -116,12 +103,9 @@ public class Door : MonoBehaviour {
 
 
 	public void Unlock () {
-		/// Called from Key.OnKeyClicked(), i.e. the Key.cs script, when the 'Key' game object is clicked
-		/// - Unlocks the door
 
 		// Prints to the console when the method is called
 		Debug.Log ("'Door.Unlock()' was called");
-        // TODO: Unlock the door 
         // Unlock the door by changing the value of 'locked'
         locked = false;
     }
