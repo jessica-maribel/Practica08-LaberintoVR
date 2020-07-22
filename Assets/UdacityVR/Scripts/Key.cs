@@ -26,6 +26,7 @@ public class Key : MonoBehaviour {
 
 		// Prints to the console when the method is called
 		Debug.Log ("'Key.OnKeyClicked()' was called");
+        door.Unlock();
         Object.Instantiate(keyPoofPrefab, this.transform.position, keyPoofPrefab.transform.rotation);
 
         // TODO: Unlock the door, display the poof effect, and remove the key from the scene
