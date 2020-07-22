@@ -16,6 +16,7 @@ public class Coin : MonoBehaviour
     public Text puntos;
     Rigidbody rb;
     
+    
     void Update()
     {
         
@@ -54,7 +55,7 @@ public class Coin : MonoBehaviour
 
     public void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         contador = 0;
         contador = contador + 1;
         puntos.text = "Monedas: " + contador;
